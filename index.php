@@ -44,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($id) {
         header("HTTP/1.1 200 OK");
-        echo json_encode($sql->fetchAll());
         exit;
     }
 }
@@ -72,7 +71,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
 
     if ($sql) {
         header("HTTP/1.1 200 OK");
-        echo json_encode($sql->fetchAll());
         exit;
     }
 }
@@ -87,7 +85,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
 
     if ($sql) {
         header("HTTP/1.1 200 OK");
-        echo json_encode($sql->fetchAll());
         exit;
     }
 }
+
+header("HTTP/1.1 400 Bad request");
+exit;
