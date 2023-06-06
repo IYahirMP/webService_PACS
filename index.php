@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    var_dump($_POST);
     $sql = $pdo->prepare("insert into 
         organigrama(AREA, DESCRIPCION, AREA_DEPENDE, NIVEL, TIPO_AREA, TITULAR) 
         values (:area, :descripcion, :area_depende, :nivel, :tipo_area, :titular)");
